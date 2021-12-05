@@ -20,6 +20,7 @@ namespace Infrastructure.Data
             }
 
             query = spec.Includes.Aggregate(query, (curent, include) => curent.Include(include));
+            query = spec.IncludeStrings.Aggregate(query, (current, include) => current.Include(include));
 
             return query;
         }
